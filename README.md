@@ -1,6 +1,7 @@
 ### 功能介绍：
 jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省去写js的烦恼。
 依赖库
+
 1. jquery - http://jquery.com
 
 2. underscorejs - http://underscorejs.org/
