@@ -1,7 +1,36 @@
 # jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省去写js的烦恼。
 
+### 点击切换
+第一次点击会加类名bind-click，第二次点击删除类名bind-click
 
-### 1.返回顶部
+1.添加自定义属性bind-click
+2.添加css要样式
+
+```html
+<div class="switch">
+<span bind-click class="bind-click"></span>
+<span bind-click></span>
+</div>
+```
+
+```css
+.switch span {
+    display: block;
+    width: 115px;
+    height: 28px;
+    background: url(onoff.png);
+    background-repeat: no-repeat;
+    background-position: 0 -40px;
+    cursor: pointer;
+}
+.switch span.bind-click {
+    background-position: 0 0;
+}
+```
+
+
+
+### 返回顶部
 1.添加自定义属性bind-gotop
 2.添加css要样式
 
