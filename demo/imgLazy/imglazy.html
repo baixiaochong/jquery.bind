@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+   </style>
+</head>
+<body>
+
+<div style="height: 700px;">
+<img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img04.lamahui.com/static/images/2015/01/12/7154e2c10eac99ddf034e4165715579b.jpg" width="312" height="204">
+</div>
+
+<div style="height: 700px;">
+<img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img04.lamahui.com/static/images/2014/12/09/a334841d2a1aa407cb81a430903d95ee.jpg" width="312" height="204">
+</div>
+
+<div style="height: 700px;">
+<img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img01.lamahui.com/static/images/2014/12/16/c3073fd3a582dfc51ced57a93a9d5bb6.jpg" width="312" height="204">
+</div>
+
+<div id="div"></div>
+
+<script src="../../lib/jquery-1.11.3.min.js"></script>
+<script src="../../lib/underscore-min.js"></script>
+<script src="../../lib/jquery.extend.js"></script>
+<script src="../../jquery.bind.js"></script>
+<script>
+    $(function(){
+        $('#div')
+            .append('<img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img04.lamahui.com/uploads/2015/03/07/34be41c0797df13c70d3b76d6230bd874964.jpg" width="247" height="341" alt="9.9包邮" />');
+            $.bindImglazy();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+.floor{border:1px solid #ccc;height:20px;line-height:20px;}
+.gotop{width:80px;height:80px;background:#222222;position:fixed;right:30px;bottom:30px;color:#ffffff;text-align:center;line-height:80px;cursor:pointer;}
+.box .bind-click{font-weight:700;border:1px solid red;}
+.switch span{display:block;width:115px;height:28px;background:url(onoff.png);background-repeat:no-repeat;background-position:0 -40px;cursor:pointer;}
+.switch span.bind-click{background-position:0 0;}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+<p class="floor bind-click" bind-click>1</p>
+<p class="floor" bind-click>2</p>
+<p class="floor" bind-click>3</p>
+<p class="floor" bind-click>4</p>
+<p class="floor" bind-click>5</p>
+</div>
+
+<div class="switch">
+<span bind-click class="bind-click"></span>
+<span bind-click></span>
+</div>
+
+<script src="../../lib/jquery-1.11.3.min.js"></script>
+<script src="../../lib/underscore-min.js"></script>
+<script src="../../lib/jquery.extend.js"></script>
+<script src="../../jquery.bind.js"></script>
+
+</body>
+</html>

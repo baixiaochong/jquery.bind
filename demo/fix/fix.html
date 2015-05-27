@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>fix</title>
+<style>
+    *{margin: 0;padding: 0;}
+    .zoom{overflow: hidden; zoom:1;}
+    .hide{ display: none;}
+    .show{ display: block;}
+    .rel{ position: relative;}
+    .abs{ position: absolute;}
+    .bind-fix{
+        position: fixed;
+        top: 0;
+        _position:absolute;
+        _bottom:auto;
+        _top:expression(eval(document.documentElement.scrollTop));
+    }
+
+    body{
+        height: 3000px;
+    }
+    .top{
+        height: 200px;
+        background-color: #ccc;
+    }
+    .box{
+        border: 1px solid red;
+        width: 150px;
+        height: 300px;
+    }
+</style>
+</head>
+<body>
+    <div class="top"></div>
+    <div id="addFix"></div>
+    <div class="box" bind-fix='300'></div>
+<script src="../../lib/jquery-1.11.3.min.js"></script>
+<script src="../../lib/underscore-min.js"></script>
+<script src="../../lib/jquery.extend.js"></script>
+<script src="../../jquery.bind.js"></script>
+</body>
+</html>
