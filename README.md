@@ -162,7 +162,7 @@ a.bind-floor-curr{
 }
 ```
 
-### 五、hover 
+### 六、hover 
 移上去加类名
 1.加自定义属性："bind-hover"
 2.添加样式
@@ -184,7 +184,7 @@ a.bind-floor-curr{
 p.bind-hover{ border: 1px solid red;}
 ```
 
-### 六、imglazy 
+### 七、imglazy 
 图片延时加载
 
 1.img加自定属性 bind-imglazy
@@ -208,7 +208,7 @@ $(function(){
 ```
 
 
-### 七、pop 弹出层 
+### 八、pop 弹出层 
 
 1.遮罩层绑定自定义属性 bind-pop-mask，一个页面一个即可，也可以不要。
 
@@ -244,7 +244,7 @@ $(function(){
 .box i { display: block; width: 30px; height: 30px; background-color: #000; border-radius: 15px; color: #fff; font-weight: bold; line-height: 30px; text-align: center; font-style: inherit; cursor: pointer; right: 0; top: 0 }
 ```
 
-### 八、tab 切换
+### 九、tab 切换
 
 1.每一组的最外层div绑定bind-tab, 值可以为click或是hover
 
