@@ -231,10 +231,33 @@ $(function(){
 .box i { display: block; width: 30px; height: 30px; background-color: #000; border-radius: 15px; color: #fff; font-weight: bold; line-height: 30px; text-align: center; font-style: inherit; cursor: pointer; right: 0; top: 0 }
 ```
 
+### 八、tab 切换
+1.每一组的最外层div绑定bind-tab, 值可以为click或是hover
+2.点击的按钮上绑定bind-tab-tit
+3.内容div绑定bind-tab-nav
 
 ```html
+<div class="tab" bind-tab="click">
+      <div class="tab-tit zoom">
+        <a href="#" bind-tab-tit  class="bind-tab-tit-active">体育</a>
+        <a href="#" bind-tab-tit >娱乐</a>
+        <a href="#" bind-tab-tit >财经</a>
+      </div>
+      <div bind-tab-nav class="tab-nav">请点击切换</div>
+      <div bind-tab-nav class="tab-nav hide">这是第二块内容</div>
+      <div bind-tab-nav class="tab-nav hide">这是第三块内容</div>
+  </div>
 ```
 ```css
+.zoom { overflow: hidden; zoom: 1; }
+.hide { display: none; }
+.show { display: block; }
+.tab { border: 1px solid #cccccc; width: 500px; height: 200px; margin: auto auto 20px auto; font-size: 14px; }
+.tab-tit { border-bottom: 1px solid #cccccc; background: #efefef; }
+.tab-tit a { display: block; width: 100px; height: 28px; line-height: 28px; float: left; text-align: center; text-decoration: none; border-right: 1px solid #cccccc; color: #222222; }
+.tab-tit a.bind-hover { background: #dddddd; }
+.tab-tit a.bind-tab-tit-active { background: #bbbbbb; color: #ffffff; }
+.tab-nav { padding: 10px; }
 ```
 
 ### 杂项
