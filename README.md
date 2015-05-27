@@ -1,7 +1,7 @@
 ### 功能介绍：
 jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省去写js的烦恼。
 
-### 点击切换
+### 一、点击切换
 第一次点击会加类名bind-click，第二次点击删除类名bind-click
 
 1.添加自定义属性bind-click
@@ -31,7 +31,7 @@ jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省
 ```
 
 
-### datalazy 
+### 二、datalazy 
 html懒加载, 滚动到屏幕加载。
 1.在div上绑定自定义属性bind-dataLazy
 2.内容写在div>textarea里面
@@ -43,6 +43,25 @@ html懒加载, 滚动到屏幕加载。
 </div>
 ```
 
+### 三、fixed
+到相应位置加类名
+1.在元素上绑定自定义属性bind-fix
+2.bind-fix设置值，可以设置数字，也可以为id
+3.bind-fix="0" 或 bind-fix="#body"
+
+```html
+<div class="box" bind-fix='300'></div>
+```
+
+```css
+.bind-fix{
+    position: fixed;
+    top: 0;
+    _position:absolute;
+    _bottom:auto;
+    _top:expression(eval(document.documentElement.scrollTop));
+}
+```
 
 
 
