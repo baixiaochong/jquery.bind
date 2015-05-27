@@ -33,7 +33,9 @@ jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省
 
 ### 二、datalazy 
 html懒加载, 滚动到屏幕加载。
+
 1.在div上绑定自定义属性bind-dataLazy
+
 2.内容写在div>textarea里面
 ```html
 <div class="box" bind-dataLazy>
@@ -61,6 +63,71 @@ html懒加载, 滚动到屏幕加载。
     _bottom:auto;
     _top:expression(eval(document.documentElement.scrollTop));
 }
+```
+
+### 四、floor 楼层跳转
+1.按钮绑自定义属性bind-floor
+
+2.设置值，对应div的id
+
+3.bind-floor="#floor1,#tit1"
+
+```html
+<div class="menu">
+  <a href="javascript:;" bind-floor="#floor1,#tit1">楼层1</a>
+  <a href="javascript:;" bind-floor="#floor2,#tit2">楼层2</a>
+  <a href="javascript:;" bind-floor="#floor3,#tit3">楼层3</a>
+  <a href="javascript:;" bind-floor="#floor4,#tit4">楼层4</a>
+</div>
+<div class="tit" id="tit1">标题1</div>
+<div id="floor1" class="floor">
+  楼层1
+</div>
+<div class="tit" id="tit2">标题2</div>
+<div id="floor2" class="floor">
+  楼层2
+</div>
+<div class="tit" id="tit3">标题3</div>
+<div id="floor3" class="floor">
+  楼层3
+</div>
+<div class="tit" id="tit4">标题4</div>
+<div id="floor4" class="floor">
+  楼层4
+</div>
+```
+
+```css
+.floor{
+      border: 1px solid #ccc;
+      height: 500px;
+    }
+
+    .menu{
+      position: fixed;
+      left: 10%;
+      top: 20%;
+      width: 100px;
+      height: 120px;
+    }
+
+    .menu a{
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      background: #eee;
+      text-decoration: none;
+      padding: 0 0 0 5px;
+    }
+
+    a.bind-floor-curr{
+      background: #222;
+      color: #ffffff;
+    }
+    .tit{
+      height: 50px;
+      background: #eeeeee;
+    }
 ```
 
 
