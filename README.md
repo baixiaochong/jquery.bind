@@ -209,10 +209,14 @@ $(function(){
 
 
 ### 七、pop 弹出层 
+
 1.遮罩层绑定自定义属性 bind-pop-mask，一个页面一个即可，也可以不要。
+
 2.弹出的div绑定自定义属性 bind-pop-box
+
 3.关闭按钮绑定自定义属性 bind-pop-close
-3.bind-pop-box和bind-pop-close设置相同的值，标记为一组
+
+4.bind-pop-box和bind-pop-close设置相同的值，标记为一组
 
 ```html
 <div class="mask hide" bind-pop-mask></div>
@@ -241,8 +245,11 @@ $(function(){
 ```
 
 ### 八、tab 切换
+
 1.每一组的最外层div绑定bind-tab, 值可以为click或是hover
+
 2.点击的按钮上绑定bind-tab-tit
+
 3.内容div绑定bind-tab-nav
 
 ```html
