@@ -199,6 +199,39 @@ $(function(){
 ```
 
 
+### 七、pop 弹出层 
+1.遮罩层绑定自定义属性 bind-pop-mask，一个页面一个即可，也可以不要。
+2.弹出的div绑定自定义属性 bind-pop-box
+3.关闭按钮绑定自定义属性 bind-pop-close
+3.bind-pop-box和bind-pop-close设置相同的值，标记为一组
+
+```html
+<div class="mask hide" bind-pop-mask></div>
+
+<div class="btn" bind-pop-btn="1">点击弹窗1</div>
+<div class="box hide" bind-pop-box="1">111
+    <i class="abs" bind-pop-close="1">X</i>
+</div>
+
+<div class="btn" bind-pop-btn="2">点击弹窗2</div>
+<div class="box hide" bind-pop-box="2">222
+    <i class="abs" bind-pop-close="2">X</i>
+</div>
+```
+```css
+* { margin: 0; padding: 0 }
+.zoom { overflow: hidden; zoom: 1 }
+.hide { display: none }
+.show { display: block }
+.rel { position: relative }
+.abs { position: absolute }
+.btn { background-color: #000; padding: 10px; width: 100px; color: #fff; font-weight: bold; text-align: center; cursor: pointer; border-radius: 10px; margin: 30px }
+.mask { width: 100%; height: 100%; background-color: #000; opacity: 0.5; filter: alpha(opacity=50); position: fixed; left: 0; top: 0; z-index: 1 }
+.box { width: 500px; height: 300px; background-color: pink; position: fixed; left: 50%; top: 50%; margin: -150px 0 0 -250px; z-index: 2 }
+.box i { display: block; width: 30px; height: 30px; background-color: #000; border-radius: 15px; color: #fff; font-weight: bold; line-height: 30px; text-align: center; font-style: inherit; cursor: pointer; right: 0; top: 0 }
+```
+
+
 ```html
 ```
 ```css
