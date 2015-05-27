@@ -1,13 +1,12 @@
-;(function(doc){
-
+$(function(){
     var 
+        doc = $(document),
         click = 'click',
         mouseover = 'mouseover',
         mouseout = 'mouseout',
         scroll = 'scroll',
 
         bindHover = 'bind-hover';      //hover
-        
 
     function showTab(my, parent) {
         var tits = parent.find('[bind-tab-tit]'),
@@ -73,8 +72,6 @@
             $('[bind-pop-box='+ flag +']').hide();
         });
 
-
-
-
-        
-}($(document)));
+    //datalazy
+    $('div[bind-dataLazy]').datalazy();
+});

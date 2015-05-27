@@ -1,4 +1,6 @@
-;(function(win){
+$(function(){
+    var win = $(window);
+
     watchSrcoll();
 
     function watchSrcoll() {
@@ -39,5 +41,5 @@
     $.extend({
         bindImglazy : watchSrcoll
     });
+});
 
-}($(window)));

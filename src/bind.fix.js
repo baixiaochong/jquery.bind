@@ -1,4 +1,4 @@
-;(function(){
+$(function(){
     var fixBox = $('[bind-fix]');
 
     if (fixBox.length) {
@@ -28,5 +28,4 @@
             my.removeClass('bind-fix');
         }
     }
-
-}());
+});

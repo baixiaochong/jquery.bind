@@ -1,4 +1,4 @@
-;(function(){
+$(function(){
     var 
         objs = [],
         isRoll = false,
@@ -50,7 +50,6 @@
         }, 200);
     }
 
-
     //根据scrollTop取当前楼层标题
     function getTit(scrollTop) {
         var obj = null;
@@ -70,5 +69,4 @@
 
         return obj;
     }
-
-}());
+});
