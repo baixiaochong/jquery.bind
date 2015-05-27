@@ -4,6 +4,7 @@
 第一次点击会加类名bind-click，第二次点击删除类名bind-click
 
 1.添加自定义属性bind-click
+
 2.添加css要样式
 
 ```html
@@ -32,6 +33,7 @@
 
 ### 返回顶部
 1.添加自定义属性bind-gotop
+
 2.添加css要样式
 
 ```html
