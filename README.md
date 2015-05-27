@@ -99,41 +99,38 @@ html懒加载, 滚动到屏幕加载。
 
 ```css
 .floor{
-      border: 1px solid #ccc;
-      height: 500px;
+    border: 1px solid #ccc;
+    height: 500px;
     }
 
-    .menu{
-      position: fixed;
-      left: 10%;
-      top: 20%;
-      width: 100px;
-      height: 120px;
-    }
+.menu{
+    position: fixed;
+    left: 10%;
+    top: 20%;
+    width: 100px;
+    height: 120px;
+}
 
-    .menu a{
-      display: block;
-      height: 30px;
-      line-height: 30px;
-      background: #eee;
-      text-decoration: none;
-      padding: 0 0 0 5px;
-    }
+.menu a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    background: #eee;
+    text-decoration: none;
+    padding: 0 0 0 5px;
+}
 
-    a.bind-floor-curr{
-      background: #222;
-      color: #ffffff;
-    }
-    .tit{
-      height: 50px;
-      background: #eeeeee;
-    }
+a.bind-floor-curr{
+    background: #222;
+    color: #ffffff;
+}
+.tit{
+    height: 50px;
+    background: #eeeeee;
+}
 ```
 
-
-
-
-### 返回顶部
+### 五、gotop 返回顶部
 1.添加自定义属性bind-gotop
 
 2.添加css要样式
@@ -154,6 +151,57 @@ html懒加载, 滚动到屏幕加载。
     line-height: 80px;
     cursor: pointer;
 }
+```
+
+### 五、hover 
+移上去加类名
+1.加自定义属性："bind-hover"
+2.添加样式
+```html
+<div class="box">
+    <p class="floor" bind-hover>1</p>
+    <p class="floor" bind-hover>2</p>
+    <p class="floor" bind-hover>3</p>
+    <p class="floor" bind-hover>4</p>
+    <p class="floor" bind-hover>5</p>
+    <p class="floor" bind-hover>6</p>
+    <p class="floor" bind-hover>7</p>
+    <p class="floor" bind-hover>8</p>
+    <p class="floor" bind-hover>9</p>
+    <p class="floor" bind-hover>0</p>
+</div>
+```
+```css
+p.bind-hover{ border: 1px solid red;}
+```
+
+### 六、imglazy 
+图片延时加载
+
+1.img加自定属性 bind-imglazy
+2.设置src地址为空白占位
+3.bind-imglazy里面设置真正的图片地址
+
+```html
+<img 
+    src="http://www.lamahui.com/static/2.0/img/public/load11.png"
+    bind-imglazy="http://img01.lamahui.com/static/images/2014/12/16/c3073fd3a582dfc51ced57a93a9d5bb6.jpg" 
+    width="312" height="204" alt=""/>
+```
+
+对于js追加载图片之后，需要执行一次$.bindImglazy();
+```js
+$(function(){
+    $('#div')
+        .append('<img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img04.lamahui.com/uploads/2015/03/07/34be41c0797df13c70d3b76d6230bd874964.jpg" width="247" height="341" alt="9.9包邮" />');
+    $.bindImglazy();
+});
+```
+
+
+```html
+```
+```css
 ```
 
 ### 杂项
