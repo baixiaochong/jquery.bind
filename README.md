@@ -1,4 +1,4 @@
-# 功能介绍：
+### 功能介绍：
 jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省去写js的烦恼。
 
 ### 点击切换
@@ -29,6 +29,21 @@ jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省
     background-position: 0 0;
 }
 ```
+
+
+### datalazy 
+html懒加载, 滚动到屏幕加载。
+1.在div上绑定自定义属性bind-dataLazy
+2.内容写在div>textarea里面
+```html
+<div class="box" bind-dataLazy>
+    <textarea>
+        <div class="box4"><img src="http://pic27.nipic.com/20130325/9290407_135751671186_2.jpg" width="100%" /></div>
+    </textarea>
+</div>
+```
+
+
 
 
 
