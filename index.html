@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jquery.bind by kyo4311</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Jquery.bind</h1>
+      <h2 class="project-tagline">绑定一些事件，省去写js的烦恼</h2>
+      <a href="https://github.com/kyo4311/jquery.bind" class="btn">View on GitHub</a>
+      <a href="https://github.com/kyo4311/jquery.bind/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/kyo4311/jquery.bind/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="功能介绍" class="anchor" href="#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>功能介绍：</h3>
+
+<p>jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省去写js的烦恼。</p>
+
+<h3>
+<a id="一点击切换" class="anchor" href="#%E4%B8%80%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>一、点击切换</h3>
+
+<p>第一次点击会加类名bind-click，第二次点击删除类名bind-click</p>
+
+<p>1.添加自定义属性bind-click</p>
+
+<p>2.添加css要样式</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>switch<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">span</span> <span class="pl-e">bind-click</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>bind-click<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+&lt;<span class="pl-ent">span</span> <span class="pl-e">bind-click</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.switch</span> <span class="pl-ent">span</span> {
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+    <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">115<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">28<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">url</span>(<span class="pl-v">onoff.png</span>);
+    <span class="pl-c1"><span class="pl-c1">background-repeat</span></span>: <span class="pl-c1">no-repeat</span>;
+    <span class="pl-c1"><span class="pl-c1">background-position</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">-40<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">cursor</span></span>: <span class="pl-c1">pointer</span>;
+}
+<span class="pl-e">.switch</span> <span class="pl-ent">span</span><span class="pl-e">.bind-click</span> {
+    <span class="pl-c1"><span class="pl-c1">background-position</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">0</span>;
+}</pre></div>
+
+<h3>
+<a id="二datalazy" class="anchor" href="#%E4%BA%8Cdatalazy" aria-hidden="true"><span class="octicon octicon-link"></span></a>二、datalazy</h3>
+
+<p>html懒加载, 滚动到屏幕加载。</p>
+
+<p>1.在div上绑定自定义属性bind-dataLazy</p>
+
+<p>2.内容写在div&gt;textarea里面</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box<span class="pl-pds">"</span></span> <span class="pl-e">bind-dataLazy</span>&gt;
+    &lt;<span class="pl-ent">textarea</span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box4<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://pic27.nipic.com/20130325/9290407_135751671186_2.jpg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">textarea</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h3>
+<a id="三fixed" class="anchor" href="#%E4%B8%89fixed" aria-hidden="true"><span class="octicon octicon-link"></span></a>三、fixed</h3>
+
+<p>到相应位置加类名
+1.在元素上绑定自定义属性bind-fix
+2.bind-fix设置值，可以设置数字，也可以为id
+3.bind-fix="0" 或 bind-fix="#body"</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box<span class="pl-pds">"</span></span> <span class="pl-e">bind-fix</span>=<span class="pl-s"><span class="pl-pds">'</span>300<span class="pl-pds">'</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.bind-fix</span>{
+    <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>;
+    <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">0</span>;
+    _<span class="pl-c1">position</span>:<span class="pl-c1">absolute</span>;
+    _<span class="pl-c1">bottom</span>:<span class="pl-c1">auto</span>;
+    _<span class="pl-c1">top</span>:expression(eval(document.documentElement.scrollTop));
+}</pre></div>
+
+<h3>
+<a id="四floor-楼层跳转" class="anchor" href="#%E5%9B%9Bfloor-%E6%A5%BC%E5%B1%82%E8%B7%B3%E8%BD%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>四、floor 楼层跳转</h3>
+
+<p>1.按钮绑自定义属性bind-floor</p>
+
+<p>2.设置值，对应div的id</p>
+
+<p>3.bind-floor="#floor1,#tit1"</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">bind-floor</span>=<span class="pl-s"><span class="pl-pds">"</span>#floor1,#tit1<span class="pl-pds">"</span></span>&gt;楼层1&lt;/<span class="pl-ent">a</span>&gt;
+  &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">bind-floor</span>=<span class="pl-s"><span class="pl-pds">"</span>#floor2,#tit2<span class="pl-pds">"</span></span>&gt;楼层2&lt;/<span class="pl-ent">a</span>&gt;
+  &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">bind-floor</span>=<span class="pl-s"><span class="pl-pds">"</span>#floor3,#tit3<span class="pl-pds">"</span></span>&gt;楼层3&lt;/<span class="pl-ent">a</span>&gt;
+  &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">bind-floor</span>=<span class="pl-s"><span class="pl-pds">"</span>#floor4,#tit4<span class="pl-pds">"</span></span>&gt;楼层4&lt;/<span class="pl-ent">a</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tit<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tit1<span class="pl-pds">"</span></span>&gt;标题1&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>floor1<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span>&gt;
+  楼层1
+&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tit<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tit2<span class="pl-pds">"</span></span>&gt;标题2&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>floor2<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span>&gt;
+  楼层2
+&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tit<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tit3<span class="pl-pds">"</span></span>&gt;标题3&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>floor3<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span>&gt;
+  楼层3
+&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tit<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tit4<span class="pl-pds">"</span></span>&gt;标题4&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>floor4<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span>&gt;
+  楼层4
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.floor</span>{
+    <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">500<span class="pl-k">px</span></span>;
+    }
+
+<span class="pl-e">.menu</span>{
+    <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>;
+    <span class="pl-c1"><span class="pl-c1">left</span></span>: <span class="pl-c1">10<span class="pl-k">%</span></span>;
+    <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">20<span class="pl-k">%</span></span>;
+    <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">120<span class="pl-k">px</span></span>;
+}
+
+<span class="pl-e">.menu</span> <span class="pl-ent">a</span>{
+    <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>;
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#eee</span>;
+    <span class="pl-c1"><span class="pl-c1">text-decoration</span></span>: <span class="pl-c1">none</span>;
+    <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span> <span class="pl-c1">0</span> <span class="pl-c1">0</span> <span class="pl-c1">5<span class="pl-k">px</span></span>;
+}
+
+<span class="pl-ent">a</span><span class="pl-e">.bind-floor-curr</span>{
+    <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#222</span>;
+    <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#ffffff</span>;
+}
+<span class="pl-e">.tit</span>{
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">50<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#eeeeee</span>;
+}</pre></div>
+
+<h3>
+<a id="五gotop-返回顶部" class="anchor" href="#%E4%BA%94gotop-%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>五、gotop 返回顶部</h3>
+
+<p>1.添加自定义属性bind-gotop</p>
+
+<p>2.添加css要样式</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">bind-gotop</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>gotop<span class="pl-pds">"</span></span>&gt;GOTOP&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.gotop</span> {
+    <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">80<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">80<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#222222</span>;
+    <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>;
+    <span class="pl-c1"><span class="pl-c1">right</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">bottom</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#ffffff</span>;
+    <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>;
+    <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-c1">80<span class="pl-k">px</span></span>;
+    <span class="pl-c1"><span class="pl-c1">cursor</span></span>: <span class="pl-c1">pointer</span>;
+}</pre></div>
+
+<h3>
+<a id="五hover" class="anchor" href="#%E4%BA%94hover" aria-hidden="true"><span class="octicon octicon-link"></span></a>五、hover</h3>
+
+<p>移上去加类名
+1.加自定义属性："bind-hover"
+2.添加样式</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;1&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;2&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;3&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;4&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;5&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;6&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;7&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;8&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;9&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>floor<span class="pl-pds">"</span></span> <span class="pl-e">bind-hover</span>&gt;0&lt;/<span class="pl-ent">p</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-ent">p</span><span class="pl-e">.bind-hover</span>{ <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">red</span>;}</pre></div>
+
+<h3>
+<a id="六imglazy" class="anchor" href="#%E5%85%ADimglazy" aria-hidden="true"><span class="octicon octicon-link"></span></a>六、imglazy</h3>
+
+<p>图片延时加载</p>
+
+<p>1.img加自定属性 bind-imglazy
+2.设置src地址为空白占位
+3.bind-imglazy里面设置真正的图片地址</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">img</span> 
+    <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://www.lamahui.com/static/2.0/img/public/load11.png<span class="pl-pds">"</span></span>
+    <span class="pl-e">bind-imglazy</span>=<span class="pl-s"><span class="pl-pds">"</span>http://img01.lamahui.com/static/images/2014/12/16/c3073fd3a582dfc51ced57a93a9d5bb6.jpg<span class="pl-pds">"</span></span> 
+    <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>312<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s"><span class="pl-pds">"</span>204<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p>对于js追加载图片之后，需要执行一次$.bindImglazy();</p>
+
+<div class="highlight highlight-js"><pre>$(<span class="pl-k">function</span>(){
+    $(<span class="pl-s"><span class="pl-pds">'</span>#div<span class="pl-pds">'</span></span>)
+        .append(<span class="pl-s"><span class="pl-pds">'</span>&lt;img src="http://www.lamahui.com/static/2.0/img/public/load11.png" bind-imglazy="http://img04.lamahui.com/uploads/2015/03/07/34be41c0797df13c70d3b76d6230bd874964.jpg" width="247" height="341" alt="9.9包邮" /&gt;<span class="pl-pds">'</span></span>);
+    $.bindImglazy();
+});</pre></div>
+
+<h3>
+<a id="七pop-弹出层" class="anchor" href="#%E4%B8%83pop-%E5%BC%B9%E5%87%BA%E5%B1%82" aria-hidden="true"><span class="octicon octicon-link"></span></a>七、pop 弹出层</h3>
+
+<p>1.遮罩层绑定自定义属性 bind-pop-mask，一个页面一个即可，也可以不要。
+2.弹出的div绑定自定义属性 bind-pop-box
+3.关闭按钮绑定自定义属性 bind-pop-close
+3.bind-pop-box和bind-pop-close设置相同的值，标记为一组</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>mask hide<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-mask</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>btn<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-btn</span>=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>&gt;点击弹窗1&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box hide<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-box</span>=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>&gt;111
+    &lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>abs<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-close</span>=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span>&gt;X&lt;/<span class="pl-ent">i</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>btn<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-btn</span>=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>&gt;点击弹窗2&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>box hide<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-box</span>=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>&gt;222
+    &lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>abs<span class="pl-pds">"</span></span> <span class="pl-e">bind-pop-close</span>=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span>&gt;X&lt;/<span class="pl-ent">i</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-ent">*</span> { <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">0</span>; <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">0</span> }
+<span class="pl-e">.zoom</span> { <span class="pl-c1"><span class="pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>; <span class="pl-c1"><span class="pl-c1">zoom</span></span>: <span class="pl-c1">1</span> }
+<span class="pl-e">.hide</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">none</span> }
+<span class="pl-e">.show</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span> }
+<span class="pl-e">.rel</span> { <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">relative</span> }
+<span class="pl-e">.abs</span> { <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">absolute</span> }
+<span class="pl-e">.btn</span> { <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#000</span>; <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">10<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#fff</span>; <span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">bold</span>; <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>; <span class="pl-c1"><span class="pl-c1">cursor</span></span>: <span class="pl-c1">pointer</span>; <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">10<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span> }
+<span class="pl-e">.mask</span> { <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100<span class="pl-k">%</span></span>; <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">100<span class="pl-k">%</span></span>; <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#000</span>; <span class="pl-c1"><span class="pl-c1">opacity</span></span>: <span class="pl-c1">0.5</span>; <span class="pl-c1"><span class="pl-c1">filter</span></span>: alpha(opacity=<span class="pl-c1">50</span>); <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>; <span class="pl-c1"><span class="pl-c1">left</span></span>: <span class="pl-c1">0</span>; <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">0</span>; <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">1</span> }
+<span class="pl-e">.box</span> { <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">500<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">300<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-id">pink</span>; <span class="pl-c1"><span class="pl-c1">position</span></span>: <span class="pl-c1">fixed</span>; <span class="pl-c1"><span class="pl-c1">left</span></span>: <span class="pl-c1">50<span class="pl-k">%</span></span>; <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">50<span class="pl-k">%</span></span>; <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">-150<span class="pl-k">px</span></span> <span class="pl-c1">0</span> <span class="pl-c1">0</span> <span class="pl-c1">-250<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">z-index</span></span>: <span class="pl-c1">2</span> }
+<span class="pl-e">.box</span> <span class="pl-ent">i</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>; <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">background-color</span></span>: <span class="pl-c1">#000</span>; <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">15<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#fff</span>; <span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">bold</span>; <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-c1">30<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>; <span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">inherit</span>; <span class="pl-c1"><span class="pl-c1">cursor</span></span>: <span class="pl-c1">pointer</span>; <span class="pl-c1"><span class="pl-c1">right</span></span>: <span class="pl-c1">0</span>; <span class="pl-c1"><span class="pl-c1">top</span></span>: <span class="pl-c1">0</span> }</pre></div>
+
+<h3>
+<a id="八tab-切换" class="anchor" href="#%E5%85%ABtab-%E5%88%87%E6%8D%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>八、tab 切换</h3>
+
+<p>1.每一组的最外层div绑定bind-tab, 值可以为click或是hover
+2.点击的按钮上绑定bind-tab-tit
+3.内容div绑定bind-tab-nav</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tab<span class="pl-pds">"</span></span> <span class="pl-e">bind-tab</span>=<span class="pl-s"><span class="pl-pds">"</span>click<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tab-tit zoom<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">bind-tab-tit</span>  <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>bind-tab-tit-active<span class="pl-pds">"</span></span>&gt;体育&lt;/<span class="pl-ent">a</span>&gt;
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">bind-tab-tit</span> &gt;娱乐&lt;/<span class="pl-ent">a</span>&gt;
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">bind-tab-tit</span> &gt;财经&lt;/<span class="pl-ent">a</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">bind-tab-nav</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tab-nav<span class="pl-pds">"</span></span>&gt;请点击切换&lt;/<span class="pl-ent">div</span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">bind-tab-nav</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tab-nav hide<span class="pl-pds">"</span></span>&gt;这是第二块内容&lt;/<span class="pl-ent">div</span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">bind-tab-nav</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>tab-nav hide<span class="pl-pds">"</span></span>&gt;这是第三块内容&lt;/<span class="pl-ent">div</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.zoom</span> { <span class="pl-c1"><span class="pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>; <span class="pl-c1"><span class="pl-c1">zoom</span></span>: <span class="pl-c1">1</span>; }
+<span class="pl-e">.hide</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">none</span>; }
+<span class="pl-e">.show</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>; }
+<span class="pl-e">.tab</span> { <span class="pl-c1"><span class="pl-c1">border</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#cccccc</span>; <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">500<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">200<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">auto</span> <span class="pl-c1">auto</span> <span class="pl-c1">20<span class="pl-k">px</span></span> <span class="pl-c1">auto</span>; <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">14<span class="pl-k">px</span></span>; }
+<span class="pl-e">.tab-tit</span> { <span class="pl-c1"><span class="pl-c1">border-bottom</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#cccccc</span>; <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#efefef</span>; }
+<span class="pl-e">.tab-tit</span> <span class="pl-ent">a</span> { <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">block</span>; <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">28<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">line-height</span></span>: <span class="pl-c1">28<span class="pl-k">px</span></span>; <span class="pl-c1"><span class="pl-c1">float</span></span>: <span class="pl-c1">left</span>; <span class="pl-c1"><span class="pl-c1">text-align</span></span>: <span class="pl-c1">center</span>; <span class="pl-c1"><span class="pl-c1">text-decoration</span></span>: <span class="pl-c1">none</span>; <span class="pl-c1"><span class="pl-c1">border-right</span></span>: <span class="pl-c1">1<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#cccccc</span>; <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#222222</span>; }
+<span class="pl-e">.tab-tit</span> <span class="pl-ent">a</span><span class="pl-e">.bind-hover</span> { <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#dddddd</span>; }
+<span class="pl-e">.tab-tit</span> <span class="pl-ent">a</span><span class="pl-e">.bind-tab-tit-active</span> { <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">#bbbbbb</span>; <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">#ffffff</span>; }
+<span class="pl-e">.tab-nav</span> { <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">10<span class="pl-k">px</span></span>; }</pre></div>
+
+<h3>
+<a id="杂项" class="anchor" href="#%E6%9D%82%E9%A1%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>杂项</h3>
+
+<ol>
+<li>希望得到大家的支持，给个star吧</li>
+<li>QQ: 9169775 大家可以一起交流</li>
+<li>QQ群：8685914 </li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kyo4311/jquery.bind">Jquery.bind</a> is maintained by <a href="https://github.com/kyo4311">kyo4311</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
