@@ -10,7 +10,7 @@ jquery.bind 通过绑定一些自定义属性，自动绑定一个js事件，省
 
 4. jquery.bind.js - http://kyo4311.github.io/jquery.bind/
 
-### 一、点击切换
+### 一、点击加类名
 第一次点击会加类名bind-click，第二次点击删除类名bind-click
 
 1.添加自定义属性bind-click
