@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .form{border: 1px solid #ccc; width: 300px; margin:auto; padding: 50px; font-size: 12px;}
+  .row{ height: 50px;}
+  .form span{width: 120px; float: left; display: block;}
+  .validate-msg{display: none; padding:0 0 0 120px; height: 22px; line-height: 22px; }
+  .bind-validate-ok{color: green;}
+  .bind-validate-error{ color: red;}
+  .bind-validate-error-input{ background: #fffae0;}
+  </style>
+   <script src="../../lib/jquery-1.11.3.min.js"></script>
+  <script src="../../lib/underscore-min.js"></script>
+  <script src="../../lib/jquery.extend.js"></script>
+  <script src="../../jquery.bind.js"></script>
+</head>
+<body>
+<form bind-validate-form class="form" action="./">
+<div class="row" bind-validate-unit>
+    <div>
+        <span>用户：</span><input type="text" name="username" bind-validate="email">
+    </div>
+    <div class="validate-msg" bind-validate-ok>验证通过</div>
+    <div class="validate-msg" bind-validate-error>请输入正确的用户名</div>
+</div>
+<div class="row" bind-validate-unit>
+    <span>密码：</span><input id="password" type="text" name="password" bind-validate-null bind-validate="^\w{6,18}$">
+    <div class="validate-msg" bind-validate-ok>验证通过</div>
+    <div class="validate-msg" bind-validate-error>请输入6-18位密码</div>
+</div>
+<div class="row"  bind-validate-unit>
+    <span>重复密码：</span>
+    <input type="text" name="repassword" bind-validate-repeat="#password" / >
+    <div class="validate-msg" bind-validate-ok>验证通过</div>
+    <div class="validate-msg" bind-validate-error>请重复密码</div>
+
+</div>
+<div class="row"><span>&nbsp;</span><input type="submit" value="提交" bind-validate-submit></div>
+</form>
+</body>
+</html>
