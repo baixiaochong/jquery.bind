@@ -8,7 +8,7 @@ $(function () {
         } else {
             my.addClass(className);
         }
-    }
+    };
 
     $('body').on('blur keyup', '[bind-placeholder]', function () {
         placeholder($(this));
