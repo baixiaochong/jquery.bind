@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>验证</title>
   <style>
   .form{border: 1px solid #ccc; width: 300px; margin:auto; padding: 50px; font-size: 12px;}
   .row{ height: 50px;}
@@ -19,26 +19,34 @@
 </head>
 <body>
 <form bind-validate-form class="form" action="./">
-<div class="row" bind-validate-unit>
-    <div>
+    <div class="row" bind-validate-unit>
         <span>用户：</span><input type="text" name="username" bind-validate="email">
+        <div class="validate-msg" bind-validate-ok>验证通过</div>
+        <div class="validate-msg" bind-validate-error>请输入正确的用户名</div>
     </div>
-    <div class="validate-msg" bind-validate-ok>验证通过</div>
-    <div class="validate-msg" bind-validate-error>请输入正确的用户名</div>
-</div>
-<div class="row" bind-validate-unit>
-    <span>密码：</span><input id="password" type="text" name="password" bind-validate-null bind-validate="^\w{6,18}$">
-    <div class="validate-msg" bind-validate-ok>验证通过</div>
-    <div class="validate-msg" bind-validate-error>请输入6-18位密码</div>
-</div>
-<div class="row"  bind-validate-unit>
-    <span>重复密码：</span>
-    <input type="text" name="repassword" bind-validate-repeat="#password" / >
-    <div class="validate-msg" bind-validate-ok>验证通过</div>
-    <div class="validate-msg" bind-validate-error>请重复密码</div>
-
-</div>
-<div class="row"><span>&nbsp;</span><input type="submit" value="提交" bind-validate-submit></div>
+    <div class="row" bind-validate-unit>
+        <span>密码：</span><input id="password" type="text" name="password" bind-validate="^\w{6,18}$">
+        <div class="validate-msg" bind-validate-ok>验证通过</div>
+        <div class="validate-msg" bind-validate-error>请输入6-18位密码</div>
+    </div>
+    <div class="row"  bind-validate-unit>
+        <span>重复密码：</span>
+        <input type="text" name="repassword" bind-validate-repeat="#password" / >
+        <div class="validate-msg" bind-validate-ok>验证通过</div>
+        <div class="validate-msg" bind-validate-error>请重复密码</div>
+    </div>
+    <div class="row"><span>&nbsp;</span><input type="submit" value="提交" bind-validate-submit></div>
 </form>
+
 </body>
+
+
+<script type="text/javascript">
+$(function(){
+  bind.validate.beforeSubmit(function(){
+    alert(1);
+  });
+});
+
+</script>
 </html>
